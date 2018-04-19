@@ -4,6 +4,7 @@ import TopBarNav from 'top-bar-nav';
 import Overview from './content/overview';
 import Scan from './content/Scan';
 import Basket from './content/basket';
+import Pay from './content/pay';
 
 export default class App extends React.Component {
 
@@ -61,7 +62,7 @@ export default class App extends React.Component {
             {label: 'Overview', title: (<Overview onSelectProduct={this.onSelectProduct}/>)}, // label is what you see in the top bar
             {label: 'Scan', title: (<Scan addProduct={this.addProduct.bind(this)}/>)}, // title is just the name of the Component being rendered.  See the renderScene property below
             {label: 'Basket', title: (<Basket products={this.state.products} deleteProducts={this.deleteProducts} refresh={this.refresh.bind(this)}/>) },
-            {label: 'Pay', title: <View/>}
+            {label: 'Pay', title: (<Pay />)}
         ];
         console.log("refreshing");
         return (
