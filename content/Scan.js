@@ -31,8 +31,20 @@ export default class Scan extends React.Component {
     };
 
     _handleBarCodeRead = result => {
-        if (result.data !== this.state.lastScannedUrl) {
-            this.props.changeView(2);
+        if (result.data !== this.state.lastScannedUrl && (this.alertPresent === undefined || this.alertPresent === false)) {
+            this.alertPresent = true;
+            Alert.alert(
+                'Bent u zeker dat u product met code:',
+                result.data,
+                [
+                    {text: 'Cancel', onPress: () => this.alertPresent = false, style: 'cancel'},
+                    {text: 'OK', onPress: () => {
+                        this.props.changeView(2);
+                        this.alertPresent = false;
+                    }},
+                ],
+                { cancelable: false }
+            )
             // LayoutAnimation.spring();
             // this.setState({ lastScannedUrl: result.data });
         }

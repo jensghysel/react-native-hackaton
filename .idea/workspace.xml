@@ -5,7 +5,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/content/Scan.js" beforeDir="false" afterPath="$PROJECT_DIR$/content/Scan.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/productOverview.js" beforeDir="false" afterPath="$PROJECT_DIR$/content/productOverview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/overview.js" beforeDir="false" afterPath="$PROJECT_DIR$/content/overview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/productService.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/productService.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,20 +21,8 @@
       <file leaf-file-name="overview.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/content/overview.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="700">
-              <caret line="51" column="23" lean-forward="true" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="productOverview.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/content/productOverview.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+            <state relative-caret-position="105">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -43,8 +33,8 @@
       <file leaf-file-name="Scan.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/content/Scan.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="34" column="37" lean-forward="true" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+            <state relative-caret-position="147">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -52,19 +42,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="basket.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/content/basket.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="107" column="4" selection-start-line="107" selection-start-column="4" selection-end-line="107" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
@@ -76,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TopBarNav.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/top-bar-nav/src/TopBarNav.js">
+      <file leaf-file-name="productService.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/services/productService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="207" column="80" lean-forward="true" selection-start-line="207" selection-start-column="34" selection-end-line="207" selection-end-column="80" />
+            <state relative-caret-position="202">
+              <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -98,7 +76,6 @@
     <findStrings>
       <find>const App</find>
       <find>App</find>
-      <find>itemContainer</find>
       <find>&lt;string&gt;</find>
       <find>&lt;uses-permission</find>
       <find>scrollViewProps</find>
@@ -120,6 +97,9 @@
       <find>scrollTo</find>
       <find>Dimension</find>
       <find>console.log</find>
+      <find>press</find>
+      <find>changeView</find>
+      <find>itemContainer</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -129,12 +109,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/content/topbar.js" />
-        <option value="$PROJECT_DIR$/services/productService.js" />
         <option value="$PROJECT_DIR$/util/renderIf.js" />
-        <option value="$PROJECT_DIR$/content/overview.js" />
         <option value="$PROJECT_DIR$/content/productOverview.js" />
-        <option value="$PROJECT_DIR$/App.js" />
         <option value="$PROJECT_DIR$/content/Scan.js" />
+        <option value="$PROJECT_DIR$/App.js" />
+        <option value="$PROJECT_DIR$/content/overview.js" />
+        <option value="$PROJECT_DIR$/services/productService.js" />
       </list>
     </option>
   </component>
@@ -187,44 +167,12 @@
               <item name="react-native-hackaton" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-native-hackaton" type="462c0819:PsiDirectoryNode" />
               <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="react-native" type="462c0819:PsiDirectoryNode" />
+              <item name="react-native-vector-icons" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-native-hackaton" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-native-hackaton" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="react-native" type="462c0819:PsiDirectoryNode" />
-              <item name="Libraries" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-native-hackaton" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-native-hackaton" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="react-native" type="462c0819:PsiDirectoryNode" />
-              <item name="Libraries" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-native-hackaton" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-native-hackaton" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="react-native" type="462c0819:PsiDirectoryNode" />
-              <item name="Libraries" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-              <item name="Picker" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-native-hackaton" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-native-hackaton" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="top-bar-nav" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-native-hackaton" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-native-hackaton" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="top-bar-nav" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -331,12 +279,12 @@
       <option name="presentableId" value="Default" />
       <updated>1524036194616</updated>
       <workItem from="1524036196031" duration="19176000" />
-      <workItem from="1524116911768" duration="8841000" />
+      <workItem from="1524116911768" duration="11591000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28017000" />
+    <option name="totallyTimeSpent" value="30767000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="951" extended-state="6" />
@@ -364,10 +312,10 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3290398" />
       <window_info anchor="right" id="Graph Database" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3290398" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2899878" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3290398" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2899878" />
       <window_info anchor="bottom" id="Graph Database Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.3290398" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3290398" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -452,13 +400,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/productService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/react-native/local-cli/link/__fixtures__/Info.plist">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -502,16 +443,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/content/overview.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="51" column="23" lean-forward="true" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/react-native/Libraries/Components/Picker/PickerAndroid.android.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
@@ -531,8 +462,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/top-bar-nav/src/TopBarNav.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="207" column="80" lean-forward="true" selection-start-line="207" selection-start-column="34" selection-end-line="207" selection-end-column="80" />
+        <state relative-caret-position="157">
+          <caret line="146" column="25" selection-start-line="146" selection-start-column="20" selection-end-line="146" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -546,10 +477,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/content/Scan.js">
+    <entry file="file://$PROJECT_DIR$/content/overview.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="34" column="37" lean-forward="true" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -563,6 +494,23 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/Scan.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/productService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
         </state>
       </provider>
     </entry>
