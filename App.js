@@ -64,7 +64,6 @@ export default class App extends React.Component {
             {label: 'Basket', title: (<Basket products={this.state.products} deleteProducts={this.deleteProducts} refresh={this.refresh.bind(this)}/>) },
             {label: 'Pay', title: (<Pay />)}
         ];
-        console.log("refreshing");
         return (
             <View style={{flex: 1}}>
                 <TopBarNav

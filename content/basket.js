@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, Alert, FlatList, Button} from 'react-native';
+import renderIf from '../util/renderIf';
 
 
 class Price extends React.Component {
@@ -13,18 +14,16 @@ class Price extends React.Component {
 class Total extends React.Component {
     render() {
         return (
-            <View>
-                <View style={{
-                    flex: 1,
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    paddingTop: 1,
-                    paddingBottom: 1
-                }}>
-                    <Text style={{fontSize: 18}}>Total</Text>
-                    <Price currency="€" amount={this.props.total} style={{fontSize: 18, fontWeight: 'bold'}}/>
-                </View>
+            <View style={{
+                flex: 1,
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'flex-end',
+                paddingTop: 1,
+                paddingBottom: 1
+            }}>
+                <Text style={{fontSize: 18}}>Total</Text>
+                <Price currency="€" amount={this.props.total} style={{fontSize: 18, fontWeight: 'bold'}}/>
             </View>
         );
     }
@@ -89,26 +88,43 @@ export default class Basket extends React.Component {
     }
 
     _onDelete = () => {
-        console.log("Delete pressed")
         this.props.deleteProducts();
     }
 
     render() {
         const sum = this.props.products.reduce((accum, prod) => accum + prod.price, 0);
+        const roundedSum = sum.toFixed(2);
+        const hasProds = this.props.products.length > 0;
         const showDelete = this.props.products.filter(prod => prod.isSelected).length > 0;
-        const deleteBtn = showDelete ? (<Button title="Delete product(s)" onPress={this._onDelete}/>) : (<Total total={sum}/>);
+        const deleteBtn = showDelete ? (<Button title="Delete product(s)" onPress={this._onDelete}/>) : hasProds ? (
+            <Total total={roundedSum}/>) : <View/>;
+        //const noProducts = !hasProds ? <Text>Kies producten via het overview of scan nieuwe items.</Text> : <View/>;
+        //const direction = hasProds ? "space-between" : "space-around";
 
-        return (
-            <View style={{
-                flex: 1,
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                marginTop: 30, marginBottom: 30, paddingLeft: 10, paddingRight: 10
-            }}>
-                <ProductList products={this.props.products} onSelect={this._onSelect}></ProductList>
-                {deleteBtn}
-            </View>
-        );
+        if (hasProds) {
+            return (
+                <View style={{
+                    flex: 1,
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    marginTop: 1, paddingBottom: 10, paddingLeft: 10, paddingRight: 10
+                }}>
+                    <ProductList products={this.props.products} onSelect={this._onSelect}></ProductList>
+                    {deleteBtn}
+                </View>
+            );
+        } else {
+            return (
+                <View style={{
+                    flex: 1,
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    marginTop: 1, paddingBottom: 10, paddingLeft: 10, paddingRight: 10
+                }}>
+                    <Text style={{fontSize: 18, textAlign: 'center'}}>Kies producten via het overview of scan nieuwe items.</Text>
+                </View>
+            );
+        }
     }
 }
 
