@@ -35,19 +35,19 @@ export default class ProductService extends React.Component {
                 "name": "Sla",
                 "image": "",
                 "description": "Een groene krop sla",
-                "price": "1.00"
+                "price": 1.00
             },
             {
                 "name": "Wortels",
                 "image": "",
                 "description": "10 wortels",
-                "price": "3.94"
+                "price": 3.94
             },
             {
                 "name": "Bonen",
                 "image": "",
                 "description": "1 kg bonen",
-                "price": "5.00"
+                "price": 5.00
             }
         ],
         "Fruit": [
@@ -55,7 +55,7 @@ export default class ProductService extends React.Component {
                 "name": "Bananen",
                 "image": "",
                 "description": "Tros bananen",
-                "price": "4.77"
+                "price": 4.77
             }
         ],
         "Vlees": [
@@ -63,7 +63,7 @@ export default class ProductService extends React.Component {
                 "name": "Biefstuk",
                 "image": "",
                 "description": "100 gram biefstuk",
-                "price": "8.99"
+                "price": 8.99
             }
         ]
     };
