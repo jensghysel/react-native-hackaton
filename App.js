@@ -8,15 +8,48 @@ import Basket from './content/basket';
 export default class App extends React.Component {
 
     changeView = (index) => {
-        this.nav.scrollView.scrollTo({ x: index * Dimensions.get('window').width});
+        this.nav.scrollView.scrollTo({x: index * Dimensions.get('window').width});
     };
 
-    constructor() {
-        super();
+    deleteProducts = () => {
+        this.setState(oldState => {
+            const updatedProducts = oldState.products.filter(prod => !prod.isSelected)
+            return {products: updatedProducts};
+        });
+    }
+
+    onSelectProduct = (prod) => {
+        this.addProduct(prod);
+        this.changeView(2);
+    }
+
+
+    addProduct(product) {
+        this.setState(oldState => {
+            oldState.products.push(product);
+            return {products: oldState.products};
+        });
+    }
+
+    addProducts(products) {
+        this.setState(oldState => {
+            let newProducts = oldState.products.concat(products);
+            return {products: newProducts};
+        });
+    }
+
+    addProductsByCategory(category) {
+        let products = this.myServ.getProducts(category);
+        this.addProducts([].concat(products));
+    }
+
+    constructor(props) {
+        super(props);
+        this.state = {products: []};
         this.ROUTESTACK = [
-            {label: 'Overview', title: (<Overview/>)}, // label is what you see in the top bar
-            {label: 'Scan', title: (<Scan changeView = {this.changeView}/>)}, // title is just the name of the Component being rendered.  See the renderScene property below
-            {label: 'Basket', title: (<Basket products={[]}/>)},
+            {label: 'Overview', title: (<Overview onSelectProduct={this.onSelectProduct}/>)}, // label is what you see in the top bar
+            {label: 'Scan', title: (<Scan changeView={this.changeView}/>)}, // title is just the name of the Component being rendered.  See the renderScene property below
+            {label: 'Basket', title: (<Basket products={this.state.products} deleteProducts={this.deleteProducts}/>)},
             {label: 'Pay', title: <View/>}
         ];
     }

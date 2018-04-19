@@ -8,13 +8,18 @@ import renderIf from '../util/renderIf';
 export default class Overview extends React.Component {
     productService = new ProductService();
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             category: 'Groenten',
             showOverview: true,
             showProducts: false
         };
+    }
+
+    _onSelect(prod) {
+        //console.log(this.props);
+        this.props.onSelectProduct(prod);
     }
 
     render() {
@@ -43,7 +48,7 @@ export default class Overview extends React.Component {
                     </TouchableOpacity>
                 )}
                 {renderIf(this.state.showProducts)(
-                    <ProductOverview category={this.state.category}/>
+                    <ProductOverview category={this.state.category} onPress={this._onSelect.bind(this)}/>
                 )}
             </View>
         );

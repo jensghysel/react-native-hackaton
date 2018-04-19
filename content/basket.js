@@ -1,5 +1,4 @@
 import React from 'react';
-import ProductService from '../services/productService';
 import {StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, Alert, FlatList, Button} from 'react-native';
 
 
@@ -82,63 +81,20 @@ export default class Basket extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {products: this.props.products};
-        this.myServ = new ProductService();
-    }
-
-    addProduct(product) {
-        this.setState(oldState => {
-            oldState.products.push(product);
-            return {products: oldState.products};
-        });
-    }
-
-    addProducts(products) {
-        this.setState(oldState => {
-            let newProducts = oldState.products.concat(products);
-            return {products: newProducts};
-        });
-    }
-
-    addProductsByCategory(category) {
-        let products = this.myServ.getProducts(category);
-        this.addProducts([].concat(products));
     }
 
     _onSelect = (product) => {
-        this.setState(oldState => {
-            product.isSelected = !product.isSelected;
-            return {products: oldState.products};
-        });
+        product.isSelected = !product.isSelected;
     }
 
     _onDelete = () => {
-        this.setState(oldState => {
-            const updatedProducts = oldState.products.filter(prod => !prod.isSelected)
-            return {products: updatedProducts};
-        });
-    }
-
-    _addFruit = () => {
-        this.addProductsByCategory('Fruit');
-    }
-    _addVlees = () => {
-        this.addProductsByCategory('Vlees');
-    }
-    _addGroenten = () => {
-        this.addProductsByCategory('Groenten');
+        this.props.deleteProducts();
     }
 
     render() {
-        const sum = this.state.products.reduce((accum, prod) => accum + prod.price, 0);
-        const showDelete = this.state.products.filter(prod => prod.isSelected).length > 0;
+        const sum = this.props.products.reduce((accum, prod) => accum + prod.price, 0);
+        const showDelete = this.props.products.filter(prod => prod.isSelected).length > 0;
         const deleteBtn = showDelete ? (<Button title="Delete product(s)" onPress={this._onDelete}/>) : (<Total total={sum}/>);
-        const fruitBtn = this.state.products.length < 1 ? (
-            <Button title="Add Fruit" onPress={this._addFruit}/>) : undefined;
-        const vleesBtn = this.state.products.length < 1 ? (
-            <Button title="Add Vlees" onPress={this._addVlees}/>) : undefined;
-        const groentenhBtn = this.state.products.length < 1 ? (
-            <Button title="Add Groenten" onPress={this._addGroenten}/>) : undefined;
 
         return (
             <View style={{
@@ -147,12 +103,8 @@ export default class Basket extends React.Component {
                 justifyContent: 'space-between',
                 marginTop: 30, marginBottom: 30, paddingLeft: 10, paddingRight: 10
             }}>
-                {fruitBtn}
-                {vleesBtn}
-                {groentenhBtn}
-                <ProductList products={this.state.products} onSelect={this._onSelect}></ProductList>
+                <ProductList products={this.props.products} onSelect={this._onSelect}></ProductList>
                 {deleteBtn}
-
             </View>
         );
     }
