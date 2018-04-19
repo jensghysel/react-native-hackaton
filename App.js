@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import TopBarNav from 'top-bar-nav';
 import Overview from './content/overview';
+import Scan from './content/Scan';
 
 const Scene = ({ index }) => (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -15,17 +16,11 @@ const ROUTES = {
 };
 
 const ROUTESTACK = [
-    { label: 'Overview', title: 'overview' }, // label is what you see in the top bar
-    { label: 'Scan', title: 'Scene' }, // title is just the name of the Component being rendered.  See the renderScene property below
+    { label: 'Overview', title: <Overview/> }, // label is what you see in the top bar
+    { label: 'Scan', title: <Scan /> }, // title is just the name of the Component being rendered.  See the renderScene property below
     { label: 'Basket', title: 'Scene' },
     { label: 'Pay', title: 'Scene' }
 ];
-
-// const ROUTESTACK = [
-//   { image: require('./home.png'), title: 'Scene' },
-//   { image: require('./search.png'), title: 'Scene' },
-//   { image: require('./bell.png'), title: 'Scene' }
-// ];
 
 export default class App extends React.Component {
   render() {
@@ -34,14 +29,8 @@ export default class App extends React.Component {
               <TopBarNav
                   // routeStack and renderScene are required props
                   routeStack={ROUTESTACK}
-                  renderScene={(route, i) => {
-                      switch(route.title) {
-                          case 'overview':
-                              return <Overview />;
-                          default:
-                              let Component = ROUTES[route.title];
-                              return <Component index={i} />;
-                      }
+                  renderScene={(route) => {
+                          return route.title;
                   }}
                   // Below are optional props
                   headerStyle={[styles.headerStyle, { paddingTop: 40 }]} // probably want to add paddingTop: 20 if using TopBarNav for the  entire height of screen on iOS
