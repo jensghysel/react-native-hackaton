@@ -17,15 +17,15 @@ export default class ProductService extends React.Component {
     categories = [
         {
             "name":"Groenten",
-            "icon": ""
+            "icon": "pagelines"
         },
         {
             "name":"Fruit",
-            "icon": ""
+            "icon": "apple"
         },
         {
             "name":"Vlees",
-            "icon": ""
+            "icon": "paw"
         }
     ];
 

@@ -4,6 +4,7 @@ import ProductService from '../services/productService';
 import GridView from 'react-native-super-grid';
 import ProductOverview from './productOverview';
 import renderIf from '../util/renderIf';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class Overview extends React.Component {
     productService = new ProductService();
@@ -35,6 +36,7 @@ export default class Overview extends React.Component {
                             <TouchableOpacity style={[styles.itemContainer, {backgroundColor: '#00aeef'}]} onPress={() => {
                                 this.showCategory(item.name);
                             }}>
+                                <Icon name={item.icon} size={100} color="#fff" style={{paddingBottom: 10, paddingLeft: 30}} />
                                 <Text style={styles.itemName}>{item.name}</Text>
                             </TouchableOpacity>
                         )}

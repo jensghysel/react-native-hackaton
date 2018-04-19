@@ -56,6 +56,7 @@ export default class App extends React.Component {
     }
 
     render() {
+        console.disableYellowBox = true;
         this.ROUTESTACK = [
             {label: 'Overview', title: (<Overview onSelectProduct={this.onSelectProduct}/>)}, // label is what you see in the top bar
             {label: 'Scan', title: (<Scan changeView={this.changeView}/>)}, // title is just the name of the Component being rendered.  See the renderScene property below
