@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import TopBarNav from 'top-bar-nav';
 import Overview from './content/overview';
 import Scan from './content/Scan';
+import Basket from './content/basket';
 
 const Scene = ({ index }) => (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -16,10 +17,10 @@ const ROUTES = {
 };
 
 const ROUTESTACK = [
-    { label: 'Overview', title: <Overview/> }, // label is what you see in the top bar
-    { label: 'Scan', title: <Scan /> }, // title is just the name of the Component being rendered.  See the renderScene property below
-    { label: 'Basket', title: 'Scene' },
-    { label: 'Pay', title: 'Scene' }
+    { label: 'Overview', title: (<Overview/>) }, // label is what you see in the top bar
+    { label: 'Scan', title: (<Scan />) }, // title is just the name of the Component being rendered.  See the renderScene property below
+    { label: 'Basket', title: (<Basket products={[]}/>) },
+    { label: 'Pay', title: <View/> }
 ];
 
 export default class App extends React.Component {
