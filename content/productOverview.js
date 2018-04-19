@@ -19,8 +19,7 @@ export default class ProductOverview extends React.Component {
                 style={styles.gridView}
                 renderItem={(item) => (
                     <TouchableOpacity style={[styles.itemContainer, {backgroundColor: '#00aeef'}]} onPress={() => {
-                        // console.log(item.name);
-                        // this.state.items = this.productService.getProducts(item.name);
+                        this.props.onPress(item);
                     }}>
                         <Text style={styles.itemName}>{item.name}</Text>
                     </TouchableOpacity>
