@@ -32,6 +32,12 @@ export default class App extends React.Component {
         this.changeView(2);
     }
 
+    refresh() {
+        this.setState(oldState => {
+            return {products: oldState.products};
+        });
+    }
+
     addProducts(products) {
         this.setState(oldState => {
             let newProducts = oldState.products.concat(products);
@@ -47,16 +53,17 @@ export default class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {products: []};
-        this.ROUTESTACK = [
-            {label: 'Overview', title: (<Overview onSelectProduct={this.onSelectProduct}/>)}, // label is what you see in the top bar
-            {label: 'Scan', title: (<Scan addProduct={this.addProduct.bind(this)}/>)}, // title is just the name of the Component being rendered.  See the renderScene property below
-            {label: 'Basket', title: (<Basket products={this.state.products} deleteProducts={this.deleteProducts}/>)},
-            {label: 'Pay', title: <View/>}
-        ];
     }
 
     render() {
         console.disableYellowBox = true;
+        this.ROUTESTACK = [
+            {label: 'Overview', title: (<Overview onSelectProduct={this.onSelectProduct}/>)}, // label is what you see in the top bar
+            {label: 'Scan', title: (<Scan addProduct={this.addProduct.bind(this)}/>)}, // title is just the name of the Component being rendered.  See the renderScene property below
+            {label: 'Basket', title: (<Basket products={this.state.products} deleteProducts={this.deleteProducts} refresh={this.refresh.bind(this)}/>) },
+            {label: 'Pay', title: <View/>}
+        ];
+        console.log("refreshing");
         return (
             <View style={{flex: 1}}>
                 <TopBarNav

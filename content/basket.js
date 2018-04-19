@@ -85,9 +85,11 @@ export default class Basket extends React.Component {
 
     _onSelect = (product) => {
         product.isSelected = !product.isSelected;
+        this.props.refresh();
     }
 
     _onDelete = () => {
+        console.log("Delete pressed")
         this.props.deleteProducts();
     }
 
