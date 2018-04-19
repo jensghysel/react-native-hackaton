@@ -11,7 +11,6 @@ export default class ProductOverview extends React.Component {
     }
 
     render() {
-        console.log(this.props);
         let products = this.productService.getProducts(this.props.category);
         return (
             <GridView
