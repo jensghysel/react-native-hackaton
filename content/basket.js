@@ -50,7 +50,7 @@ class Product extends React.Component {
                     paddingBottom: 5,
                     backgroundColor: bgColor
                 }}>
-                    <Image source={require('../img/liddellsMilk.jpg')} style={{width: 50, height: 50}}/>
+                    <Image source={this.props.product.image} style={{width: 50, height: 50}}/>
                     <Text>{this.props.product.description}</Text>
                     <Price currency="€" amount={this.props.product.price}/>
                 </View>

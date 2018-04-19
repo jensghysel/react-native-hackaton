@@ -11,8 +11,10 @@ import {
     TouchableOpacity,
 } from 'react-native';
 import {BarCodeScanner, Permissions} from 'expo';
+import ProductService from '../services/productService';
 
 export default class Scan extends React.Component {
+    productService = new ProductService();
 
     state = {
         hasCameraPermission: null,
@@ -33,13 +35,14 @@ export default class Scan extends React.Component {
     _handleBarCodeRead = result => {
         if (result.data !== this.state.lastScannedUrl && (this.alertPresent === undefined || this.alertPresent === false)) {
             this.alertPresent = true;
+            let product = this.productService.getProductByCode(result.data);
             Alert.alert(
-                'Bent u zeker dat u product met code:',
-                result.data,
+                'Bent u zeker dat u een',
+                product.name + ' Wilt toevoegen?',
                 [
                     {text: 'Cancel', onPress: () => this.alertPresent = false, style: 'cancel'},
                     {text: 'OK', onPress: () => {
-                        this.props.changeView(2);
+                        this.props.addProduct(product);
                         this.alertPresent = false;
                     }},
                 ],

@@ -14,6 +14,16 @@ export default class ProductService extends React.Component {
         return this.categories;
     }
 
+    getProductByCode(code){
+        if(code.indexOf('8714100') !== -1){
+            return this.products['Dranken'][0];
+        } else if(code.indexOf('781690547746') !== -1){
+            return this.products['Other'][0];
+        } else {
+            return this.products['Groenten'][1];
+        }
+    }
+
     categories = [
         {
             "name":"Groenten",
@@ -24,8 +34,12 @@ export default class ProductService extends React.Component {
             "icon": "apple"
         },
         {
-            "name":"Vlees",
-            "icon": "paw"
+            "name":"Dranken",
+            "icon": "beer"
+        },
+        {
+            "name": "Other",
+            "icon": "list-alt"
         }
     ];
 
@@ -33,19 +47,19 @@ export default class ProductService extends React.Component {
         "Groenten": [
             {
                 "name": "Sla",
-                "image": "",
+                "image": require('../img/sla.jpeg'),
                 "description": "Een groene krop sla",
                 "price": 1.00
             },
             {
                 "name": "Wortels",
-                "image": "",
+                "image": require('../img/wortels.jpg'),
                 "description": "10 wortels",
                 "price": 3.94
             },
             {
                 "name": "Bonen",
-                "image": "",
+                "image": require('../img/bonen.png'),
                 "description": "1 kg bonen",
                 "price": 5.00
             }
@@ -53,17 +67,25 @@ export default class ProductService extends React.Component {
         "Fruit": [
             {
                 "name": "Bananen",
-                "image": "",
+                "image": require('../img/bananen.jpg'),
                 "description": "Tros bananen",
                 "price": 4.77
             }
         ],
-        "Vlees": [
+        "Dranken": [
             {
-                "name": "Biefstuk",
-                "image": "",
-                "description": "100 gram biefstuk",
-                "price": 8.99
+                "name": "Ice-tea",
+                "image": require('../img/ice-tea.jpg'),
+                "description": "Een blik ice-tea",
+                "price": 1.99
+            }
+        ],
+        "Other": [
+            {
+                "name": "Loyalty Kaart",
+                "image": require('../img/loyalty-card.png'),
+                "description": "Loyalty Kaart",
+                "price": 30.00
             }
         ]
     };

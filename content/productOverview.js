@@ -1,5 +1,5 @@
 import React from 'react';
-import {TouchableOpacity, Text, StyleSheet} from 'react-native';
+import {TouchableOpacity, Text, StyleSheet, Image} from 'react-native';
 import ProductService from '../services/productService';
 import GridView from 'react-native-super-grid';
 
@@ -21,6 +21,7 @@ export default class ProductOverview extends React.Component {
                     <TouchableOpacity style={[styles.itemContainer, {backgroundColor: '#00aeef'}]} onPress={() => {
                         this.props.onPress(item);
                     }}>
+                        <Image source={item.image} style={{marginBottom: 20, marginLeft: 40, height: 80, width: 80, borderRadius: 5, opacity: 0.8}} />
                         <Text style={styles.itemName}>{item.name}</Text>
                     </TouchableOpacity>
                 )}

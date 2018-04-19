@@ -29,6 +29,7 @@ export default class App extends React.Component {
             oldState.products.push(product);
             return {products: oldState.products};
         });
+        this.changeView(2);
     }
 
     addProducts(products) {
@@ -48,7 +49,7 @@ export default class App extends React.Component {
         this.state = {products: []};
         this.ROUTESTACK = [
             {label: 'Overview', title: (<Overview onSelectProduct={this.onSelectProduct}/>)}, // label is what you see in the top bar
-            {label: 'Scan', title: (<Scan changeView={this.changeView}/>)}, // title is just the name of the Component being rendered.  See the renderScene property below
+            {label: 'Scan', title: (<Scan addProduct={this.addProduct.bind(this)}/>)}, // title is just the name of the Component being rendered.  See the renderScene property below
             {label: 'Basket', title: (<Basket products={this.state.products} deleteProducts={this.deleteProducts}/>)},
             {label: 'Pay', title: <View/>}
         ];
